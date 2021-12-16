@@ -1,0 +1,27 @@
+---
+export interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+---
+<div class="card lg:card-side bordered shadow-2xl">
+  <figure class= "p-3">
+    <img src="https://picsum.photos/id/1005/300/250" class ="rounded-lg shadow-lg">
+  </figure> 
+  <div class="card-body">
+    <h2 class="card-title">{post.title}
+      <div class="badge mx-2 bg-secondary text-white">NEW</div>
+    </h2> 
+    <h5>{post.publishDate}</h5>
+    <p>{post.description}</p> 
+    <div class="card-actions">
+      <button class="btn btn-primary">
+    <a href={post.url}>Read more</a></button> 
+    </div>
+  </div>
+</div>
+
+<style>
+
+</style>
